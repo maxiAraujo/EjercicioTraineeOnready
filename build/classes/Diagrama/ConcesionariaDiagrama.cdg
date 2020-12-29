@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Concesionaria">
+  <ClassDiagramComponents>
+    <Class name="Vehiculo" package="concesionaria.Entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="puertas" type="int" visibility="private"/>
+        <Field name="cilindrada" type="String" visibility="private"/>
+        <Field name="precio" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="int" name="puertas"/>
+          <Argument type="Double" name="precio"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="String" name="cilindrada"/>
+          <Argument type="Double" name="precio"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getPuertas" returnType="int" visibility="public"/>
+        <Method name="setPuertas" returnType="void" visibility="public">
+          <Argument type="int" name="puertas"/>
+        </Method>
+        <Method name="getCilindrada" returnType="String" visibility="public"/>
+        <Method name="setCilindrada" returnType="void" visibility="public">
+          <Argument type="String" name="cilindrada"/>
+        </Method>
+        <Method name="getPrecio" returnType="Double" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="Double" name="precio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Vehiculo" name="o"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Concesionaria" package="Concesionario" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConcesiorarioServicio" package="Concesionario.Servicios" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="vehiculoServicio" type="VehiculoServicio" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="central" returnType="void" visibility="public"/>
+        <Method name="separador" returnType="void" visibility="private"/>
+        <Method name="printVehiculo" returnType="void" visibility="private">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+        <Method name="VehiculoMasCaro" returnType="void" visibility="private">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="VehiculoMasBarato" returnType="void" visibility="private">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="contieneY" returnType="void" visibility="private">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="ordenados" returnType="void" visibility="private">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VehiculoServicio" package="Concesionario.Servicios" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="crearVehiculo" returnType="List&lt;Vehiculo&gt;" visibility="public"/>
+        <Method name="masCaro" returnType="Vehiculo" visibility="public">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+        <Method name="masBarato" returnType="Vehiculo" visibility="public">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+        <Method name="contieneY" returnType="Vehiculo" visibility="public">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+        <Method name="ordenarMayor" returnType="List&lt;Vehiculo&gt;" visibility="public">
+          <Argument type="List&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vehiculoServicio" source="Concesionario.Servicios.ConcesiorarioServicio" target="Concesionario.Servicios.VehiculoServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Concesionario.Servicios.VehiculoServicio" target="concesionaria.Entidades.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Concesionario.Servicios.ConcesiorarioServicio" target="concesionaria.Entidades.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="concesionaria.Entidades.Vehiculo" target="concesionaria.Entidades.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
